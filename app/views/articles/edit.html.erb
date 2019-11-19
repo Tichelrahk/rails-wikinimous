@@ -1,0 +1,21 @@
+<nav class="navbar bg-light sticky">
+  <%= link_to 'Wiki Home', root_path, class: 'nav-item nav-link text-muted' %>
+  <%= link_to 'Create New', new_article_path, class: 'nav-item nav-link text-muted' %>
+</nav>
+<div class="container bg-light form-container">
+  <h1>Create a new article</h1>
+  <div class="form">
+    <%= form_for(@article) do |f| %>
+      <div class="form-item">
+        <div class="label"><%= f.label :title %></div>
+        <%= f.text_field :title, class: 'form-item' %>
+      </div>
+      <div class="form-item">
+        <div class="label"><%= f.label :content %></div>
+        <%= f.text_area :content, class: 'form-item' %>
+      </div>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
